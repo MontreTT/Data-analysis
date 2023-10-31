@@ -3,7 +3,7 @@ import pandas as pd
 
 #Initial Dataset that needs transformation
 
-!["dirty dataset"]('dataset_before_cleaning.png')
+!["dirty dataset"]('/dataset_before_cleaning.png')
 
 df = pd.read_excel('Dirty-Data-Sample1.xlsx', sheet_name="Dirty 1")
 df= df.round(4)

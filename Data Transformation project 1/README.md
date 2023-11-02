@@ -82,5 +82,5 @@ print(new_sheet)
 with pd.ExcelWriter("Dirty-Data-Sample1.xlsx", mode='a') as writer:
     new_sheet.to_excel(writer, sheet_name='Cleaned_Data',index=False)
 </pre>
-
+## Final look of Spreadsheet , Ready for data analysis
 ![dataset_after cleaning](dataset_after_cleaning.png "Excel SpreadSheet transformed and ready for analysis")

@@ -44,7 +44,7 @@
 
 ### We also need to filter any  Null values that may exist in the sheet. 
 
-### As "Employement" (full-time , part-time , contract) highly affects  payment we need to make sure that data are equally distributed
+### Although "Employement" (full-time , part-time , contract) highly affects  payment we identify that in all three cases (Remote ,Hybrid , On-Site) data are equally distributed .
 
 ### As it seems though  On-Site workers still remain at the bottom of the chart .
 
@@ -58,5 +58,6 @@
 
 ![rage_vs_years_of_coding_scatterplot](age_vs_years_of_coding_scatterplot.png)
 
+### On the other hand more coding experience does not translate to bigger salaries
 
 

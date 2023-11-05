@@ -34,9 +34,10 @@
 ![remote work total pay comparison](remote_work-total_pay.png)
 
 
+
 ## Our first hypothesis suggests the initial hypothesis is False and remote workers actually get paid more .
 ### We need to filter data so we are sure we havent made any mistakes and we are not biased. 
-![remote work total pay comparison](pivot_table_employment.png)
+
 ### We identify that salaries between countries differ a lot and and so are the numbers of people for each country  so
 
 ### we decide to filter data for US citizens only
@@ -45,7 +46,16 @@
 
 ### As "Employement" (full-time , part-time , contract) highly affects  payment we need to make sure that data are equally distributed
 
+### As it seems though  On-Site workers still remain at the bottom of the chart .
 
 <div style="display: flex;">
   <img src="an_rev_us_prog_chart.png" style="width: 49% height: auto;;" />
 </div>
+
+
+## Continuing the analysis we identify an unsual insight 
+### As it seems the older someone is , the more coding experience he has , which is natural . 
+
+
+
+

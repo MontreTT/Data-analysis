@@ -27,9 +27,9 @@
 ### "Converted Comp Yearly" (annual salary in USD)
 
 
-
-
 ![csv after column feature](dataset_after_column_feature.png)
+
+## Now we need to see in general the comparison between remote
 
 ## Our first hypothesis suggests the initial hypothesis is False and remote workers actually get paid more .
 ### We need to filter data so we are sure we havent made any mistakes and we are not biased. 

@@ -2,7 +2,9 @@
 ### The dataset comes from Stack Overflow and is labeled as "stack-overflow-developer-survey-2023"
 ### This dataset represents developers from across the globe , their working experience , working style , learning progress  ,salary e.t.c
 
-### First we need to identify which  data are useful for our analysis and which are not
+![Alt text](relative/path/to/image.png)
+
+### First we need to identify which  data are useful for our analysis scenario and which are not
 
 
 

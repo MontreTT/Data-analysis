@@ -18,6 +18,8 @@
 
 ### "Remote Work" (On-Site , Hybrid , Remote)
 
+### "EdLevel (Degree , Bachelor's ,Master e.t.c)
+
 ### "YearsCodePRo" (represents years of coding experience in a firm )
 
 ### "Currency(US Dollars , Euros e.t.c.)

@@ -31,6 +31,8 @@
 
 ## Now we need to compare the average salaries of Remote workers  with that of Hybrid workers and On-Site workers.
 
+![csv after column feature](remote_work total_pay.png)
+
 
 ## Our first hypothesis suggests the initial hypothesis is False and remote workers actually get paid more .
 ### We need to filter data so we are sure we havent made any mistakes and we are not biased. 

@@ -56,6 +56,7 @@
 ## Continuing the analysis we identify an unsual insight 
 ### As it seems the older someone is , the more coding experience he has , which is natural . 
 
+![rage_vs_years_of_coding_scatterplot](age_vs_years_of_coding_scatterplot.png)
 
 
 

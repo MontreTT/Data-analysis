@@ -2,7 +2,7 @@
 ### The dataset comes from Stack Overflow and is labeled as "stack-overflow-developer-survey-2023"
 ### This dataset represents developers from across the globe , their working experience , working style , learning progress  ,salary e.t.c
 
-![Alt text](relative/path/to/image.png)
+![raw csv for data analysis](raw_table.png)
 
 ### First we need to identify which  data are useful for our analysis scenario and which are not
 
@@ -12,13 +12,22 @@
 
 ### We choose the columns:   "Main branch" (Developer as professional job)
 
+### "Age" for better understanding 
+
+### "Employment"( Full time , part time)
+
 ### "Remote Work" (On-Site , Hybrid , Remote)
+
+### "YearsCodePRo" (represents years of coding experience in a firm )
+
+### "Currency(US Dollars , Euros e.t.c.)
 
 ### "Converted Comp Yearly" (annual salary in USD)
 
-### "Age" for better understanding 
 
 
+
+![csv after column feature](dataset_after_column_feature.png)
 
 ## Our first hypothesis suggests the initial hypothesis is False and remote workers actually get paid more .
 ### We need to filter data so we are sure we havent made any mistakes and we are not biased. 

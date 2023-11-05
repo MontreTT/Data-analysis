@@ -37,13 +37,15 @@
 ## Our first hypothesis suggests the initial hypothesis is False and remote workers actually get paid more .
 ### We need to filter data so we are sure we havent made any mistakes and we are not biased. 
 ![remote work total pay comparison](pivot_table_employment.png)
-### We identify that salaries between countries differ a lot and and so are the numbers of people for each country 
-### As Entries are more than enough , Filter USA only citizens will solve this problem 
+### We identify that salaries between countries differ a lot and and so are the numbers of people for each country  so
+
+### we decide to filter data for US citizens only
+
 ### We also need to filter any  Null values that may exist in the sheet. 
 
 ### As "Employement" (full-time , part-time , contract) highly affects  payment we need to make sure that data are equally distributed
 
-<p float="left">
-  <img src=".png" width="100" />
-  <img src="/path/to/image2.png" width="100" /> 
-</p>
+
+<div style="display: flex;">
+  <img src="an_rev_us_prog_chart.png" style="width: 49% height: auto;;" />
+</div>

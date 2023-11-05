@@ -43,3 +43,7 @@
 
 ### As "Employement" (full-time , part-time , contract) highly affects  payment we need to make sure that data are equally distributed
 
+<p float="left">
+  <img src=".png" width="100" />
+  <img src="/path/to/image2.png" width="100" /> 
+</p>

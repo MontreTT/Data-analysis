@@ -58,6 +58,8 @@
 
 ![rage_vs_years_of_coding_scatterplot](age_vs_years_of_coding_scatterplot.png)
 
-### On the other hand more coding experience does not translate to bigger salaries
+## On the other hand more coding experience does not translate to bigger salaries
 
 ![Programmers Annual Salary vs Years of Excperience](programmers_annual_salary.png)
+
+## To further explain we partitioned the graph to 3 smaller one with some help of Tableau

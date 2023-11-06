@@ -60,4 +60,4 @@
 
 ### On the other hand more coding experience does not translate to bigger salaries
 
-
+![Programmers Annual Salary vs Years of Excperience](programmers_annual_salary.png)

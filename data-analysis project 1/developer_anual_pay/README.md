@@ -70,13 +70,18 @@
 ### After a lot of studying and online searching we come at these conclusions :
 
 ### Between 0-12 years of coding experience the salary is increasing with experience . The average salary varies from 95-180k per year
+![Salary for coding experience 0-12 years](sal_exp1.png)
+
 
 ### Between 13-28 years of coding experience the salary remains the same . The average salaray varies around 160-180k per year
+![Salary for coding experience 12-28 years](sal_exp2.png)
 
 ### This is mainly because experience reaches the highest cap firms are willing to pay for a position . Extra experience further than 13 years is considered unimportant
 
 ### For 28+ years of coding experience on the other hand . Salaries are on the decline .
+![Salary for coding experience 28+ years](sal_exp3.png)
 
 ### As we previously discussed coding experience has a positive correlation with age . At these ranges companies are willing to pay less for that particular group of people as aging seems more important than knowledge.
 
+## This means that age affect directly salaries . To ensure a fair comparison between Remote , On-site and hybrid workers we need to transform data so they are not affected by data. 
 

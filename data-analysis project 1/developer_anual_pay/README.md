@@ -66,10 +66,17 @@
 ## To further explain we partitioned the graph to 3 smaller one with some help of Tableau
 
 <div class='tableauPlaceholder' id='viz1699358467224' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZN&#47;ZNNSN8SBH&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;ZNNSN8SBH' /> <param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;ZN&#47;ZNNSN8SBH&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>   
+
 ### After a lot of studying and online searching we come at these conclusions :
+
 ### Between 0-12 years of coding experience the salary is increasing with experience . The average salary varies from 95-180k per year
+
 ### Between 13-28 years of coding experience the salary remains the same . The average salaray varies around 160-180k per year
+
 ### This is mainly because experience reaches the highest cap firms are willing to pay for a position . Extra experience further than 13 years is considered unimportant
+
 ### For 28+ years of coding experience on the other hand . Salaries are on the decline .
+
 ### As we previously discussed coding experience has a positive correlation with age . At these ranges companies are willing to pay less for that particular group of people as aging seems more important than knowledge.
+
 

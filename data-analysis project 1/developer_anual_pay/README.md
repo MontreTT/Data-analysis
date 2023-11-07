@@ -85,3 +85,10 @@
 
 ## This means that age affect directly salaries . To ensure a fair comparison between Remote , On-site and hybrid workers we need to transform data so they are not affected by data. 
 
+### We transform the data to be equally distributed 
+
+![Final Transformed Data](Final_Transformed_Data.png)
+
+## We can see that in the first place hybrid workers are paid more on average 
+## At second places come Remote workers
+## And last , On-site workers have the lowert salaries on average

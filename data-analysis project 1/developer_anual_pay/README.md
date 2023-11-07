@@ -1,4 +1,4 @@
-## In this Project I was asked to confirm whether on-site workers are getting paid more than remote ones
+## In this Project I was asked to confirm whether on-site workers in the US are getting paid more than remote workers
 ## TOOLS : Google Sheets , Tableau
 ### The dataset comes from Stack Overflow and is labeled as "stack-overflow-developer-survey-2023"
 ### This dataset represents developers from across the globe , their working experience , working style , learning progress  ,salary e.t.c
@@ -87,8 +87,8 @@
 
 ### We transform the data to be equally distributed 
 
-![Final Transformed Data](Final_Transformed_Data.png)
+![Final Transformed Data](Final_Transformed_Salaries.png)
 
-## We can see that in the first place hybrid workers are paid more on average 
-## At second places come Remote workers
-## And last , On-site workers have the lowert salaries on average
+## We can see that in the first place come hybrid workers with an annual average salary of 168k
+## At second places come Remote workers at 150k
+## And last , On-site workers have the lowert salaries on average (133k)

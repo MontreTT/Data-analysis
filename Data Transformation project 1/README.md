@@ -1,5 +1,5 @@
 
-import pandas as pd
+
 
 # The excel file is originally formated like this
 ![dataset_before_cleaning](dataset_before_cleaning.png "Excel SpreadSheet to be transformed for analysis")
@@ -17,6 +17,8 @@ import pandas as pd
 
 
 ## Import Data from Excel
+
+import pandas as pd
 
 df = pd.read_excel('Dirty-Data-Sample1.xlsx', sheet_name="Dirty 1")
 

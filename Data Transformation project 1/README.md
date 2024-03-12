@@ -44,7 +44,7 @@ df3 = df3.drop(df.index[-1])
 df3 = df3.rename(columns={'Ship Mode>>': 'Order ID'})
 
 
-## Run Excel Transforming Data , Create a new Array that will contain the transformed values
+## Transform Excel Data , Create a new Array that will contain the transformed values
 
 ### The final format Will be [Order ID , Segment , Shipment Method , Total Value]  
 

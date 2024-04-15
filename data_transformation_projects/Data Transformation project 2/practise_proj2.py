@@ -13,27 +13,34 @@ data = data.drop('Ref.' , axis =1 )
 #print(data.describe())
 
 #identify columns with "[]"
-columns = []
+columns_to_clean = []
 for column in data.columns:
+    #print(column)
     dirty = False
     for row in data[column] :
         #print(row)
         if "[" in str(row):
             dirty = True
-    columns.append(dirty)
+    if (dirty == True):
+        columns_to_clean.append(column)
 
 
-print(columns)
+
+print(columns_to_clean)
 
 
 
 #remove references from peak and all time peak columns
-for row in data["Peak"]:
-    row =str(row).split("[")[0]
+for column  in columns_to_clean:
+    for i, row in enumerate(data[column]) :
+        cleaned_row =str(row).split("[")[0]
+        #print(row,column)
+        data.at[i, column] = cleaned_row
+        print(data.at[i, column])
+        #print(data.loc[row, column])
 
 
 
-    print(row)
     #row = row
 #print(data["Peak"])
 
@@ -41,9 +48,9 @@ for row in data["Peak"]:
 
 
 
+print(data.dtypes)
 
-'''
-new_file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive2/2.csv'
+new_file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive2/3.csv'
 data.to_csv(new_file_path, index=False)
-'''
-print(data)
+
+#print(data)

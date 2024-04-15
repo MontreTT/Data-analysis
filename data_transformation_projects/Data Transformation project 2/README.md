@@ -149,7 +149,7 @@ This means that our data are now cleaned .
 
 Final we reorient data columns for better visual performance
 
-![Final Dataset Look](dataset_before_cleaning.png "Final Dataset Lookin") 
+![Final Dataset Look](final_cv_look.png "Final Dataset Lookin") 
 
 
 

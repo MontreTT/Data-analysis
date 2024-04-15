@@ -26,14 +26,14 @@ Then we are looking for dirty data
 
 ## Since we scraped the data from wiki there are multiple reference points that need to be taken out of the columns
 
-<pre>
+```python
 #remove references from peak and all time peak columns
 for column  in data.columns:
     for i, row in enumerate(data[column]) :
         #removes "[x] from row
         cleaned_row =str(row).split("[")[0]
         data.at[i, column] = cleaned_row
-</pre>
+```
 
 
 Then we remove the ref. column as it is not nessecary
@@ -57,30 +57,30 @@ But first we need to transform data to numeric format
 
 We reformat dollar columns "Average gross" , "Actual gross in local currency  " , "Adjusted gross in dollars"
 
-<pre>
+```python
 for column in data.columns:
     if ("gross" in column):
         #print(column)
         for i,row in enumerate(data[column]) :
             data.at[i,column] = row.replace("$", "")
             data.at[i, column] = data.at[i,column].replace(",", "")
-</pre>
+```
 
 ![reformated dollars signs](actual_gross_vs_gross_in_dollars.png "Removed tags from CSV file")
 
 
-<pre>
+```python
 #convert columns types
 data['Actual gross in local currency'] = pd.to_numeric(data['Actual gross in local currency'], errors='coerce')
 data['Adjusted gross in dollars'] = pd.to_numeric(data['Adjusted gross in dollars'], errors='coerce')
 data['Average gross'] = pd.to_numeric(data['Average gross'], errors='coerce')
 data['Shows'] = pd.to_numeric(data['Shows'], errors='coerce')
 
-</pre>
+```
 
 # We now Identify a major problem . The are two columns for total gross , one for total gross in local currency and one for total gross in dollars . 
 
-<pre>
+```python
     
 #iterate on columns
 actual_gross = True
@@ -91,7 +91,7 @@ for i in range(data.shape[0]):
 actual_gross = round(data['Shows'] == (data['Actual gross in local currency']//100) // (data['Average gross']//100))
 adjusted_gross = round(data['Shows'] == (data['Adjusted gross in dollars']//100) //  (data['Average gross']//100))
 print(actual_gross,adjusted_gross)
-</pre>
+```
 
 ## We compare the rows with the product of shows *  average gross
 
@@ -149,15 +149,17 @@ print(outliers1,outliers2,outliers3,outliers4,outliers5)
 We see that the only outliers in our CSV are  325 shows at position 13 made by Cher with the title "Living Proof: The Farewell Tour" .
 As we later identify this to be true on https://en.wikipedia.org/wiki/Living_Proof:_The_Farewell_Tour#:~:text=The%20tour%20kicked%20off%20in,with%20former%20husband%2C%20Sonny%20Bono.
 
-## This means that our data are now cleaned .
+## This means that our data are now cleanned .
 
 Final we reorient data columns for better visual performance
 
+```python
 data = data[['Rank', 'Peak', 'All Time Peak', 'Artist', 'Start Year', 'End Year', 'Tour title', 'Shows', 'number of average gross in dollars',  'Adjusted gross in dollars']]
+
 
 data.rename(columns={'Adjusted gross in dollars': 'overall gross in $'}, inplace=True)
 data.rename(columns={'number of average gross in dollars': 'average gross in $'}, inplace=True)
-
+```
 ![Final Dataset Look](final_cv_look.png "Final Dataset Lookin") 
 
 

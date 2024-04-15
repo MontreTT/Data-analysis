@@ -20,7 +20,7 @@ After an initial examination of data we need to some transformations to better h
 
 <pre>
 data.rename(columns={'Actual{NBSP}gross': 'Actual gross'}, inplace=True)
-data.rename(columns={'Adjusted{NBSP}gross (in 2022 dollars)': 'Adjusted gross (in 2022 dollars)'} , inplace=True)
+data.rename(columns={'Adjusted{NBSP}gross in dollar)': 'Adjusted gross in dollars'} , inplace=True)
 </pre>
 Then we are looking for dirty data 
 
@@ -53,7 +53,7 @@ We see that there are numemerous columns that need to be changed to numeric
 
 But first we need to transform data to numeric format 
 
-We reformat dollar columns "Average gross" , "Actual gross " , "Adjusted gross (in 2022 dollars)"
+We reformat dollar columns "Average gross" , "Actual gross in local currency  " , "Adjusted gross in dollars"
 
 <pre>
 for column in data.columns:

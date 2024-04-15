@@ -41,8 +41,18 @@ data = data.drop('Ref.' , axis =1 )
 
 ![dataset after removing unecessary wiki-refs tags ](removed_tags.png "Removed tags from CSV file")
 
-# we acess types of column 
+## Then we need to prepare the data for numeric analysis
+
+#we acess types of column 
 data.dtypes
+
+We see that there are numemerous columns that need to be changed to numeric
+
+
+
+But first we need to transform data 
+
+
 
 
 

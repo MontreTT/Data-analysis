@@ -25,14 +25,14 @@ Then we are looking for dirty data
 
 Since we scraped the data from wiki there are multiple reference points that need to be taken out of the columns
 
-
+<pre>
 #remove references from peak and all time peak columns
 for column  in data.columns:
     for i, row in enumerate(data[column]) :
         #removes "[x] from row
         cleaned_row =str(row).split("[")[0]
         data.at[i, column] = cleaned_row
-
+</pre>
 Then we remove the ref. column as it is not nessecary
 
 #drop unnecessary column

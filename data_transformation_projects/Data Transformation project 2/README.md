@@ -10,3 +10,5 @@ file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive2/practise_
 
 # Use pandas to read the CSV file
 data = pd.read_csv(file_path)
+
+![dataset_before_cleaning](1initial.png "Excel SpreadSheet to be transformed for analysis")

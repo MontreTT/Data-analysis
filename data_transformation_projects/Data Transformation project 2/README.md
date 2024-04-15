@@ -1,14 +1,14 @@
 In this project we have a dataset scraped from  https://en.wikipedia.org/wiki/List_of_highest-grossing_concert_tours_by_women 
 which reflects most sucessful concerts by women artists
 
-First we read the csv file 
+# First we read the csv file 
 
 import pandas as pd
 
 file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive2/practise_proj2.csv'
 
 
-# Use pandas to read the CSV file
+#Use pandas to read the CSV file
 data = pd.read_csv(file_path)
 
 ![dataset_before_cleaning](1initial.png "CSV SpreadSheet to be transformed for analysis")
@@ -24,7 +24,7 @@ data.rename(columns={'Adjusted{NBSP}gross (in 2022 dollars)': 'Adjusted gross (i
 </pre>
 Then we are looking for dirty data 
 
-Since we scraped the data from wiki there are multiple reference points that need to be taken out of the columns
+## Since we scraped the data from wiki there are multiple reference points that need to be taken out of the columns
 
 <pre>
 #remove references from peak and all time peak columns
@@ -74,7 +74,7 @@ data['Shows'] = pd.to_numeric(data['Shows'], errors='coerce')
 
 </pre>
 
-We now Identify a major problem . The are two columns for total gross , one for total gross in local currency and one for total gross in dollars . 
+# We now Identify a major problem . The are two columns for total gross , one for total gross in local currency and one for total gross in dollars . 
 
 <pre>
     
@@ -89,15 +89,15 @@ adjusted_gross = round(data['Shows'] == (data['Adjusted gross in dollars']//100)
 print(actual_gross,adjusted_gross)
 </pre>
 
-We compare the rows with the product of shows *  average gross
+## We compare the rows with the product of shows *  average gross
 
 <div class="image-container">
     <img src="loc_cur_gross.png" alt="local currency gross" style="width: 45%;">
     <img src="cur_in_dollars.png" alt="currency in dollars" style="width: 45%;">
 </div>
 
-We see that the two other columns are actually calculating the  local currency and no the in dollars transform .
-Since the shows are non-changing values that means that the average gross column constists of local currency and not dollars. 
+## We see that the two other columns are actually calculating the  local currency and no the in dollars transform .
+## Since the shows are non-changing values that means that the average gross column constists of local currency and not dollars. 
 
 We create a new column for computing average in dollars 
 
@@ -118,9 +118,9 @@ data[['Start Year', 'End Year']] = data['Year(s)'].str.split(str(char), expand=T
 data['Start Year'] = pd.to_numeric(data['Start Year'], errors='coerce')
 data['End Year'] = pd.to_numeric(data['End Year'], errors='coerce')
 
-At last we ensure that there are no outliers. For this we are using Z-scores with more than "3" values.
+# At last we ensure that there are no outliers. For this we are using Z-scores with more than "3" values.
 
-# Define threshold for outliers (e.g., Z-score > 3 or Z-score < -3)
+#Define threshold for outliers (e.g., Z-score > 3 or Z-score < -3)
 threshold = 3
 
 
@@ -133,7 +133,7 @@ z_scores5 = stats.zscore(data['End Year'])
 
 
 
-# Find outliers
+## Find outliers
 outliers1 = data['Adjusted gross in dollars'][abs(z_scores1) > threshold]
 outliers2 = data['number of average gross in dollars'][abs(z_scores2) > threshold]
 outliers3 = data['Shows'][abs(z_scores3) > threshold]
@@ -145,9 +145,14 @@ print(outliers1,outliers2,outliers3,outliers4,outliers5)
 We see that the only outliers in our CSV are  325 shows at position 13 made by Cher with the title "Living Proof: The Farewell Tour" .
 As we later identify this to be true on https://en.wikipedia.org/wiki/Living_Proof:_The_Farewell_Tour#:~:text=The%20tour%20kicked%20off%20in,with%20former%20husband%2C%20Sonny%20Bono.
 
-This means that our data are now cleaned .
+## This means that our data are now cleaned .
 
 Final we reorient data columns for better visual performance
+
+data = data[['Rank', 'Peak', 'All Time Peak', 'Artist', 'Start Year', 'End Year', 'Tour title', 'Shows', 'number of average gross in dollars',  'Adjusted gross in dollars']]
+
+data.rename(columns={'Adjusted gross in dollars': 'overall gross in $'}, inplace=True)
+data.rename(columns={'number of average gross in dollars': 'average gross in $'}, inplace=True)
 
 ![Final Dataset Look](final_cv_look.png "Final Dataset Lookin") 
 

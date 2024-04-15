@@ -11,7 +11,7 @@ file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive2/practise_
 # Use pandas to read the CSV file
 data = pd.read_csv(file_path)
 
-![dataset_before_cleaning](1initial.png "Excel SpreadSheet to be transformed for analysis")
+![dataset_before_cleaning](1initial.png "CSV SpreadSheet to be transformed for analysis")
 
 After an initial examination of data we need to some transformations to better handle the data
 
@@ -37,6 +37,8 @@ Then we remove the ref. column as it is not nessecary
 
 #drop unnecessary column
 data = data.drop('Ref.' , axis =1 )
+
+![dataset after removing unecessary wiki-refs tags ](removed_tags.png "Removed tags from CSV file")
 
 # we acess types of column 
 data.dtypes

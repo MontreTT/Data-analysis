@@ -18,9 +18,10 @@ After an initial examination of data we need to some transformations to better h
 
 #transform non-breaking characters space to space to acess some columns
 
+<pre>
 data.rename(columns={'Actual{NBSP}gross': 'Actual gross'}, inplace=True)
 data.rename(columns={'Adjusted{NBSP}gross (in 2022 dollars)': 'Adjusted gross (in 2022 dollars)'} , inplace=True)
-
+</pre>
 Then we are looking for dirty data 
 
 Since we scraped the data from wiki there are multiple reference points that need to be taken out of the columns

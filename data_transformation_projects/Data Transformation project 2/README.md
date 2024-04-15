@@ -34,6 +34,8 @@ for column  in data.columns:
         cleaned_row =str(row).split("[")[0]
         data.at[i, column] = cleaned_row
 </pre>
+
+
 Then we remove the ref. column as it is not nessecary
 
 #drop unnecessary column
@@ -63,6 +65,8 @@ for column in data.columns:
             data.at[i,column] = row.replace("$", "")
             data.at[i, column] = data.at[i,column].replace(",", "")
 </pre>
+
+![reformated dollars signs](actual_gross_vs_gross_in_dollars.png "Removed tags from CSV file")
 
 
 <pre>

@@ -71,6 +71,7 @@ for i, parts in enumerate(rows):
 
     # Update the 'time' column in the DataFrame with total minutes
     data.loc[i, "time"] = total_minutes
+#rename column to 'time in minutes'
 data.rename(columns={'time ': 'time in minutes'})
 ```
 ### Before and After transormation. 
@@ -85,9 +86,10 @@ data.rename(columns={'time ': 'time in minutes'})
 ## We also need to split the amount of reviews as its appended in the 'stars' column.
 ```Python
 
-
+#plit start column after "stars"
 split_data = data['stars'].str.split('(?<=stars)', expand=True)
 
+#function that takes a row and formats to either 'Not rated Yet ' or to row's rate
 def extract_and_replace(value):
     if value == 'Not rated yet':
         return value
@@ -95,21 +97,23 @@ def extract_and_replace(value):
         # Extracting first number
         rating = value.split()[0]
         return float(rating)
-
+#function that takes a row and formats it to return the number of ratings 
 def extract_ratings(value):
     if value is not None and value != 'Nan' :
         # Extracting number of ratings
         ratings = value.split()[0]
         return ratings
     else:
+        #if its none return  0 
         return "0"
 
 
-# Applying the function to each column
+
 split_data.columns = ['stars', 'ratings']
-#print(split_data['ratings'])
+# Applying the function to each column
 data['stars'] = data['stars'].apply(extract_and_replace)
 data['ratings'] = split_data['ratings'].apply(extract_ratings)
+#remove ',' from 'ratings' column 
 data['ratings'] = data['ratings'].str.replace(',', '').astype(int)
 ```
 
@@ -123,13 +127,16 @@ data['ratings'] = data['ratings'].str.replace(',', '').astype(int)
 
 
 ```Python
+#replace 'Free' with '0' , remove ',' and '.00' from column 
 data['price'] = data['price'].str.replace("Free","0").str.replace(',', '').str.replace('.00', '').astype(float)
 #transform currecy : ruppees to dollars
 data['price'] = data['price'] * (0.012)
+#rename column to 'price in dollars'
 data.rename(columns={'price': 'price in dollars'}, inplace=True)
 ```
 ### Finally make all rows of language start witha capital letter
 ```Python
+#make first letter of 'language' column capital 
 data['language'] = data['language'].str.title()
 
 ### Write data to csv

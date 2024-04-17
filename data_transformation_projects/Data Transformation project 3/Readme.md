@@ -133,5 +133,5 @@ data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_d
 
 ## Final file after transformation 
 
-![dataset_after_cleaning](./images/audible_cleaned.csv.png "CSV SpreadSheet after transformation")
+![dataset_after_cleaning](./images/audible_cleaned.png "CSV SpreadSheet after transformation")
 

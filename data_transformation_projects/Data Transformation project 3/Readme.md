@@ -1,4 +1,6 @@
-'''Python 
+Data cleaning project on a Audible Dataset from Kaggle (https://www.kaggle.com/datasets/snehangsude/audible-dataset?select=audible_uncleaned.csv)
+
+```Python 
 
 import pandas as pd
 
@@ -7,7 +9,12 @@ file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/audible_u
 
 # Use pandas to read the CSV file
 data = pd.read_csv(file_path)
+```
 
+![dataset_before_cleaning](./images/audible_uncleaned.csv.png "CSV SpreadSheet to be transformed for analysis")
+
+
+```Python
 
 # Trim whitespace from all values in the DataFrame
 data = data.map(lambda x: x.strip() if isinstance(x, str) else x)
@@ -100,5 +107,4 @@ data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_d
 
 
 
-
-'''
+```

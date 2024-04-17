@@ -85,6 +85,7 @@ data.rename(columns={'time ': 'time in minutes'})
 ## We also need to split the amount of reviews as its appended in the 'stars' column.
 ```Python
 
+
 split_data = data['stars'].str.split('(?<=stars)', expand=True)
 
 def extract_and_replace(value):
@@ -110,28 +111,33 @@ split_data.columns = ['stars', 'ratings']
 data['stars'] = data['stars'].apply(extract_and_replace)
 data['ratings'] = split_data['ratings'].apply(extract_ratings)
 data['ratings'] = data['ratings'].str.replace(',', '').astype(int)
-
-
-#print(data['stars'])
-#print(data['ratings'])
-#print(split_data)
-
-
-
-data['price'] = data['price'].str.replace("Free","0").str.replace(',', '').str.replace('.00', '').astype(float)
-
-print(data['price'])
-#print(data.loc[8,'price'])
-
-data['language'] = data['language'].str.title()
-
-data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_data.csv', index=False)
-
-
-
 ```
 
+<div class="image-container">
+    <img src="./images/stars_before.png" alt="time_before_png" style="width: 25%; height: 800px; float: left;">
+    <img src="./images/stars_ratings_after.png" alt="time_after_png" style="width: 25%; height: 800px; float: left;">
+</div>
+
+
+## We now change the 'price' column to raw integer so they can be accessed for calculations
+
+
+```Python
+data['price'] = data['price'].str.replace("Free","0").str.replace(',', '').str.replace('.00', '').astype(float)
+#transform currecy : ruppees to dollars
+data['price'] = data['price'] * (0.012)
+data.rename(columns={'price': 'price in dollars'}, inplace=True)
+```
+### Finally make all rows of language start witha capital letter
+```Python
+data['language'] = data['language'].str.title()
+
+### Write data to csv
+data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_data.csv', index=False)
+
+```
 ## Final file after transformation 
 
 ![dataset_after_cleaning](./images/audible_cleaned.png "CSV SpreadSheet after transformation")
+
 

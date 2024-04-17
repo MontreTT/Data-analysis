@@ -50,6 +50,7 @@ for i, parts in enumerate(rows):
 
     # Update the 'time' column in the DataFrame with total minutes
     data.loc[i, "time"] = total_minutes
+#rename column to 'time in minutes'
 data.rename(columns={'time ': 'time in minutes'})
 
 
@@ -78,7 +79,6 @@ def extract_ratings(value):
 
 # Applying the function to each column
 split_data.columns = ['stars', 'ratings']
-#print(split_data['ratings'])
 data['stars'] = data['stars'].apply(extract_and_replace)
 data['ratings'] = split_data['ratings'].apply(extract_ratings)
 

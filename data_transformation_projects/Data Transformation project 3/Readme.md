@@ -2,8 +2,10 @@ Data cleaning project on a Audible Dataset from Kaggle (https://www.kaggle.com/d
 
 ```Python 
 
-import pandas as pd
+import pandas as pd   #Import pandas library
 
+
+#File path of the CSV file
 file_path = 'C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/audible_uncleaned.csv'
 
 
@@ -14,23 +16,33 @@ data = pd.read_csv(file_path)
 ![dataset_before_cleaning](./images/audible_uncleaned.csv.png "CSV SpreadSheet to be transformed for analysis")
 
 
+### Before anything its important to trim data to exclude any later errors 
 ```Python
 
 # Trim whitespace from all values in the DataFrame
 data = data.map(lambda x: x.strip() if isinstance(x, str) else x)
+```
 
+## We identify that columns 'author' and 'narrator' need to get ridden of the unnecessary description 
+```Python 
 data['author']= data['author'].str.replace("Writtenby:" , "")
-data['narrator'] = data['narrator'].str.replace("Narratedby:","")
 
+data['narrator'] = data['narrator'].str.replace("Narratedby:","")
+```
+
+## The time column needs to be transformed into raw minutes to enable further numeric analysis
+
+```Python 
 # Split the duration string into hours and minutes components
 # Split the 'time' column into parts based on the 'and' separator
 rows = data['time'].str.split('and')
+
 
 # Iterate over each row
 for i, parts in enumerate(rows):
     # Print the parts of each row
     print("Parts of row", i, ":", parts)
-
+    
     # Initialize hours and minutes
     hours = 0
     minutes = 0
@@ -60,9 +72,20 @@ for i, parts in enumerate(rows):
     # Update the 'time' column in the DataFrame with total minutes
     data.loc[i, "time"] = total_minutes
 data.rename(columns={'time ': 'time in minutes'})
+```
+### After transormation 
+
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="./images/time_before.png" alt="time_before_png">
+    </div>
+    <div class="image-wrapper">
+        <img src="./images/time_after.png" alt="time_after_png">
+    </div>
+</div>
 
 
-
+```Python
 split_data = data['stars'].str.split('(?<=stars)', expand=True)
 
 def extract_and_replace(value):
@@ -108,3 +131,18 @@ data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_d
 
 
 ```
+
+.image-wrapper {
+    width: 50%;
+    float: left;
+    height: 200px; /* Set the desired height */
+    box-sizing: border-box; /* Ensure padding and borders are included in the width */
+    padding: 10px; /* Optional: Add some padding for spacing */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+}
+

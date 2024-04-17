@@ -16,21 +16,21 @@ data = pd.read_csv(file_path)
 ![dataset_before_cleaning](./images/audible_uncleaned.csv.png "CSV SpreadSheet to be transformed for analysis")
 
 
-### Before anything its important to trim data to exclude any later errors 
+### Before anything its important to trim data to exclude any later errors. 
 ```Python
 
 # Trim whitespace from all values in the DataFrame
 data = data.map(lambda x: x.strip() if isinstance(x, str) else x)
 ```
 
-## We identify that columns 'author' and 'narrator' need to get ridden of the unnecessary description 
+## We identify that columns 'author' and 'narrator' need to get ridden of the unnecessary description.
 ```Python 
 data['author']= data['author'].str.replace("Writtenby:" , "")
 
 data['narrator'] = data['narrator'].str.replace("Narratedby:","")
 ```
 
-## The time column needs to be transformed into raw minutes to enable further numeric analysis
+## The time column needs to be transformed into raw minutes to enable further numeric analysis.
 
 ```Python 
 # Split the duration string into hours and minutes components
@@ -73,19 +73,18 @@ for i, parts in enumerate(rows):
     data.loc[i, "time"] = total_minutes
 data.rename(columns={'time ': 'time in minutes'})
 ```
-### After transormation 
+### Before and After transormation. 
 
 <div class="image-container">
-    <div class="image-wrapper">
-        <img src="./images/time_before.png" alt="time_before_png">
-    </div>
-    <div class="image-wrapper">
-        <img src="./images/time_after.png" alt="time_after_png">
-    </div>
+    <img src="./images/time_before.png" alt="time_before_png" style="width: 25%; height: 800px; float: left;">
+    <img src="./images/time_after.png" alt="time_after_png" style="width: 25%; height: 800px; float: left;">
 </div>
 
 
+## For the "stars" review column we need the raw value out of 5 for the analysis. 
+## We also need to split the amount of reviews as its appended in the 'stars' column.
 ```Python
+
 split_data = data['stars'].str.split('(?<=stars)', expand=True)
 
 def extract_and_replace(value):

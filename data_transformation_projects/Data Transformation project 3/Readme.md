@@ -131,17 +131,7 @@ data.to_csv('C:/Users/Montre/Desktop/data analyst/pandas 🐼/archive3/cleaned_d
 
 ```
 
-.image-wrapper {
-    width: 50%;
-    float: left;
-    height: 200px; /* Set the desired height */
-    box-sizing: border-box; /* Ensure padding and borders are included in the width */
-    padding: 10px; /* Optional: Add some padding for spacing */
-}
+## Final file after transformation 
 
-.image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire container */
-}
+![dataset_after_cleaning](./images/audible_cleaned.csv.png "CSV SpreadSheet after transformation")
 
